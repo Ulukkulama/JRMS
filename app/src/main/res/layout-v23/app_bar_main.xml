@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:translationZ="1dp"
+    tools:context=".HomeActivity"
+    android:backgroundTint="@color/primary" >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.JRMS.AppBarOverlay"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            app:popupTheme="@style/Theme.JRMS.PopupOverlay">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:translationX="-32dp">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:queryHint="Search Book, Author or ISBN"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@color/tertiary"
+                    android:backgroundTint="@color/tertiary"
+                    android:layout_margin="10dp"
+                    android:contextClickable="true"
+                    >
+
+                </androidx.appcompat.widget.SearchView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cartopenimagebutton"
+                android:src="@drawable/ic_menu_cart"
+                android:translationX="-35dp"
+                app:layout_anchor="@+id/appBarLayout"
+                android:backgroundTint="@color/primary"/>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
